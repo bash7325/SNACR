@@ -10,14 +10,19 @@ export class LandingComponent {
   password: string = '';
   signupEmail: string = '';
   signupPassword: string = '';
+  confirmEmail: string = '';
+  confirmPassword: string = '';
+  isLoginForm: boolean = true; // Initially set to true for login form
+
+  toggleForm() {
+    this.isLoginForm = !this.isLoginForm;
+  }
 
   login() {
     // Implement login logic here using AuthService or your chosen authentication method
-    // Example: this.authService.login(this.email, this.password);
   }
 
   register() {
     // Implement sign-up logic here using AuthService or your chosen authentication method
-    // Example: this.authService.register(this.signupEmail, this.signupPassword);
   }
 }
