@@ -1,30 +1,32 @@
-<div class="landing-container">
-  <h1>Welcome to SNACR</h1>
-  <p>The best place to manage your snack list.</p>
+<main class="container">
+  <div class="landing-container">
+    <h1>Welcome to SNACR</h1>
+    <p>The best place to manage your snack list.</p>
 
-  <div class="form-container">
-    <h2>{{ isLoginForm ? 'Login' : 'Sign Up' }}</h2>
-    <form (ngSubmit)="isLoginForm ? login() : register()">
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" [(ngModel)]="password" required>
-      </div>
-      <!-- Display additional fields for signup if needed -->
-      <div *ngIf="!isLoginForm" class="form-group">
-        <label for="signup-email">Confirm Email</label>
-        <input type="email" id="signup-email" name="signup-email" [(ngModel)]="confirmEmail" required>
-      </div>
-      <div *ngIf="!isLoginForm" class="form-group">
-        <label for="signup-password">Confirm Password</label>
-        <input type="password" id="signup-password" name="signup-password" [(ngModel)]="confirmPassword" required>
-      </div>
-      <button type="submit">{{ isLoginForm ? 'Login' : 'Sign Up' }}</button>
-       <!-- Toggle between login and signup forms -->
-    <button (click)="toggleForm()">Switch to {{ isLoginForm ? 'Sign Up' : 'Login' }}</button>
-    </form>
+    <div class="form-container">
+      <h2>{{ isLoginForm ? 'Login' : 'Sign Up' }}</h2>
+      <form (ngSubmit)="isLoginForm ? login() : register()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        </div>
+        <!-- Display additional fields for signup if needed -->
+        <div *ngIf="!isLoginForm" class="form-group">
+          <label for="signup-email">Confirm Email</label>
+          <input type="email" id="signup-email" name="signup-email" [(ngModel)]="confirmEmail" required>
+        </div>
+        <div *ngIf="!isLoginForm" class="form-group">
+          <label for="signup-password">Confirm Password</label>
+          <input type="password" id="signup-password" name="signup-password" [(ngModel)]="confirmPassword" required>
+        </div>
+        <button type="submit">{{ isLoginForm ? 'Login' : 'Sign Up' }}</button>
+        <!-- Toggle between login and signup forms -->
+      <button (click)="toggleForm()">Switch to {{ isLoginForm ? 'Sign Up' : 'Login' }}</button>
+      </form>
+    </div>
   </div>
-</div>
+</main>
